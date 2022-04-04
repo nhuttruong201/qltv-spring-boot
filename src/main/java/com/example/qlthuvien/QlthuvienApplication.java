@@ -3,7 +3,14 @@ package com.example.qlthuvien;
 import java.util.List;
 
 import com.example.qlthuvien.entity.ChucVuEntity;
+import com.example.qlthuvien.entity.PhieuPhatEntity;
+import com.example.qlthuvien.entity.QuyenHanEntity;
+import com.example.qlthuvien.entity.QuyenHanNhanVienEntity;
 import com.example.qlthuvien.repository.ChucVuRepo;
+import com.example.qlthuvien.repository.PhieuPhatRepo;
+import com.example.qlthuvien.repository.QuyenHanNhanVienRepo;
+import com.example.qlthuvien.repository.QuyenHanRepo;
+import com.example.qlthuvien.repository.SachRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,6 +25,18 @@ public class QlthuvienApplication implements CommandLineRunner {
 
 	@Autowired
 	private ChucVuRepo chucVuRepo;
+
+	@Autowired
+	private PhieuPhatRepo phieuPhatRepo;
+
+	@Autowired
+	private QuyenHanRepo quyenHanRepo;
+
+	@Autowired
+	private QuyenHanNhanVienRepo quyenHanNhanVienRepo;
+
+	@Autowired
+	private SachRepo sachRepo;
 
 	public static void main(String[] args) {
 		System.out.println(PURPLE);
@@ -34,6 +53,23 @@ public class QlthuvienApplication implements CommandLineRunner {
 
 		List<ChucVuEntity> chucVuEntities = chucVuRepo.findAll();
 		chucVuEntities.forEach(System.out::println);
+
+		System.out.println("___________________________PHIẾU PHẠT______________________________");
+		System.out.println("___________________________________________________________________");
+		List<PhieuPhatEntity> listPhieuPhat = phieuPhatRepo.findAll();
+		listPhieuPhat.forEach(System.out::println);
+
+		System.out.println("___________________________QUYỀN HẠN______________________________");
+		System.out.println("___________________________________________________________________");
+		List<QuyenHanEntity> listQH = quyenHanRepo.findAll();
+		listQH.forEach(System.out::println);
+
+		System.out.println("___________________________QUYỀN HẠN NHÂN VIÊN_____________________");
+		System.out.println("___________________________________________________________________");
+		List<QuyenHanNhanVienEntity> listQHNV = quyenHanNhanVienRepo.findAll();
+		listQHNV.forEach(System.out::println);
+		System.out.println("______________________________SÁCH_________________________________");
+		System.out.println("___________________________________________________________________");
 
 	}
 
