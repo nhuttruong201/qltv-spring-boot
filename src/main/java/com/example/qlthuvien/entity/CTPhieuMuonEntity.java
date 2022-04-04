@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "ctphieumuon")
-@IdClass(CompositeKey.class)
+@IdClass(CTPhieuMuonEntityKey.class)
 public class CTPhieuMuonEntity {
 
     @Id
@@ -47,7 +47,7 @@ public class CTPhieuMuonEntity {
 
 }
 
-class CompositeKey implements Serializable {
+class CTPhieuMuonEntityKey implements Serializable {
     private int maphieumuon;
     private int masach;
 }
