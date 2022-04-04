@@ -6,10 +6,11 @@ import com.example.qlthuvien.entity.CTPhieuMuonEntity;
 import com.example.qlthuvien.entity.ChucVuEntity;
 import com.example.qlthuvien.entity.PhieuPhatEntity;
 import com.example.qlthuvien.entity.QuyenHanEntity;
-// import com.example.qlthuvien.entity.QuyenHanNhanVienEntity;
+import com.example.qlthuvien.entity.QuyenHanNhanVienEntity;
+import com.example.qlthuvien.entity.SachEntity;
 import com.example.qlthuvien.repository.ChucVuRepo;
 import com.example.qlthuvien.repository.PhieuPhatRepo;
-// import com.example.qlthuvien.repository.QuyenHanNhanVienRepo;
+import com.example.qlthuvien.repository.QuyenHanNhanVienRepo;
 import com.example.qlthuvien.repository.QuyenHanRepo;
 import com.example.qlthuvien.repository.SachRepo;
 import com.example.qlthuvien.entity.NhaXuatBanEntity;
@@ -29,16 +30,18 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class QlthuvienApplication implements CommandLineRunner {
-	public static final String PURPLE = "\033[0;35m"; // PURPLE
+	// public static final String PURPLE = "\033[0;35m"; // PURPLE
 
 	@Autowired
 	private ChucVuRepo chucVuRepo;
 	@Autowired
-	private CTPhieuMuonRepo ctPhieuMuonRepo;
-	@Autowired
 	private NhanVienRepo nhanVienRepo;
 	@Autowired
 	private NhaXuatBanRepo nhaXuatBanRepo;
+
+	@Autowired
+	private CTPhieuMuonRepo ctPhieuMuonRepo;
+
 	@Autowired
 	private PhieuMuonRepo phieuMuonRepo;
 
@@ -48,14 +51,14 @@ public class QlthuvienApplication implements CommandLineRunner {
 	@Autowired
 	private QuyenHanRepo quyenHanRepo;
 
-	// @Autowired
-	// private QuyenHanNhanVienRepo quyenHanNhanVienRepo;
-
 	@Autowired
 	private SachRepo sachRepo;
 
+	@Autowired
+	private QuyenHanNhanVienRepo quyenHanNhanVienRepo;
+
 	public static void main(String[] args) {
-		System.out.println(PURPLE);
+		// System.out.println(PURPLE);
 		SpringApplication.run(QlthuvienApplication.class, args);
 		System.out.println("\n>>> Server is running on port 5000");
 
@@ -95,11 +98,17 @@ public class QlthuvienApplication implements CommandLineRunner {
 		List<QuyenHanEntity> listQH = quyenHanRepo.findAll();
 		listQH.forEach(System.out::println);
 
-		System.out.println("___________________________QUYỀN HẠN NHÂNVIÊN_____________________");
+		System.out.println("___________________________QUYỀN HẠN NHÂN VIÊN_____________________");
 		System.out.println("___________________________________________________________________");
-		// List<QuyenHanNhanVienEntity> listQHNV = quyenHanNhanVienRepo.findAll();
-		// listQHNV.forEach(System.out::println);
+		List<QuyenHanNhanVienEntity> listQHNV = quyenHanNhanVienRepo.findAll();
+		listQHNV.forEach(System.out::println);
+
 		System.out.println("______________________________SÁCH_________________________________");
+		System.out.println("___________________________________________________________________");
+		List<SachEntity> listSach = sachRepo.findAll();
+		listSach.forEach(System.out::println);
+		System.out.println("___________________________________________________________________");
+
 		System.out.println("___________________________________________________________________");
 
 	}
