@@ -12,67 +12,73 @@ import javax.persistence.Table;
 public class SachEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private int maphieumuon;
-    private String lydophat;
-    private float sotienphat;
-    private float sotiendadong;
-    private boolean danopphat;
+    private int masach;
+    private String tensach;
+    private int soluong;
+    private int namxuatban;
+    private int matheloai;
+    private int manxb;
 
     @Override
     public String toString() {
         return "{" +
-                " maphieumuon='" + getMaphieumuon() + "'" +
-                ", lydophat='" + getLydophat() + "'" +
-                ", sotienphat='" + getSotienphat() + "'" +
-                ", sotiendadong='" + getSotiendadong() + "'" +
-                ", danopphat='" + isDanopphat() + "'" +
+                " masach='" + getMasach() + "'" +
+                ", tensach='" + getTensach() + "'" +
+                ", soluong='" + getSoluong() + "'" +
+                ", namxuatban='" + getNamxuatban() + "'" +
+                ", matheloai='" + getMatheloai() + "'" +
+                ", manxb='" + getManxb() + "'" +
                 "}";
     }
 
-    public int getMaphieumuon() {
-        return this.maphieumuon;
+    public int getMasach() {
+        return this.masach;
     }
 
-    public void setMaphieumuon(int maphieumuon) {
-        this.maphieumuon = maphieumuon;
+    public void setMasach(int masach) {
+        this.masach = masach;
     }
 
-    public String getLydophat() {
-        return this.lydophat;
+    public String getTensach() {
+        return this.tensach;
     }
 
-    public void setLydophat(String lydophat) {
-        this.lydophat = lydophat;
+    public void setTensach(String tensach) {
+        this.tensach = tensach;
     }
 
-    public float getSotienphat() {
-        return this.sotienphat;
+    public int getSoluong() {
+        return this.soluong;
     }
 
-    public void setSotienphat(float sotienphat) {
-        this.sotienphat = sotienphat;
+    public void setSoluong(int soluong) {
+        this.soluong = soluong;
     }
 
-    public float getSotiendadong() {
-        return this.sotiendadong;
+    public int getNamxuatban() {
+        return this.namxuatban;
     }
 
-    public void setSotiendadong(float sotiendadong) {
-        this.sotiendadong = sotiendadong;
+    public void setNamxuatban(int namxuatban) {
+        this.namxuatban = namxuatban;
     }
 
-    public boolean isDanopphat() {
-        return this.danopphat;
+    public int getMatheloai() {
+        return this.matheloai;
     }
 
-    public boolean getDanopphat() {
-        return this.danopphat;
+    public void setMatheloai(int matheloai) {
+        this.matheloai = matheloai;
     }
 
-    public void setDanopphat(boolean danopphat) {
-        this.danopphat = danopphat;
+    public int getManxb() {
+        return this.manxb;
+    }
+
+    public void setManxb(int manxb) {
+        this.manxb = manxb;
     }
 
 }

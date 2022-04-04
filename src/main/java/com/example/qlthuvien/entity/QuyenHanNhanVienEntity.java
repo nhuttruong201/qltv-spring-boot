@@ -40,7 +40,6 @@ public class QuyenHanNhanVienEntity {
     public void setManhanvien(int manhanvien) {
         this.manhanvien = manhanvien;
     }
-
 }
 
 class CompositeKey implements Serializable {
