@@ -2,6 +2,7 @@ package com.example.qlthuvien;
 
 import java.util.List;
 
+import com.example.qlthuvien.entity.CTPhieuMuonEntity;
 import com.example.qlthuvien.entity.ChucVuEntity;
 import com.example.qlthuvien.entity.PhieuPhatEntity;
 import com.example.qlthuvien.entity.QuyenHanEntity;
@@ -11,6 +12,14 @@ import com.example.qlthuvien.repository.PhieuPhatRepo;
 import com.example.qlthuvien.repository.QuyenHanNhanVienRepo;
 import com.example.qlthuvien.repository.QuyenHanRepo;
 import com.example.qlthuvien.repository.SachRepo;
+import com.example.qlthuvien.entity.NhaXuatBanEntity;
+import com.example.qlthuvien.entity.NhanVienEntity;
+import com.example.qlthuvien.entity.PhieuMuonEntity;
+import com.example.qlthuvien.repository.CTPhieuMuonRepo;
+import com.example.qlthuvien.repository.ChucVuRepo;
+import com.example.qlthuvien.repository.NhaXuatBanRepo;
+import com.example.qlthuvien.repository.NhanVienRepo;
+import com.example.qlthuvien.repository.PhieuMuonRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -25,6 +34,14 @@ public class QlthuvienApplication implements CommandLineRunner {
 
 	@Autowired
 	private ChucVuRepo chucVuRepo;
+	@Autowired
+	private CTPhieuMuonRepo ctPhieuMuonRepo;
+	@Autowired
+	private NhanVienRepo nhanVienRepo;
+	@Autowired
+	private NhaXuatBanRepo nhaXuatBanRepo;
+	@Autowired
+	private PhieuMuonRepo phieuMuonRepo;
 
 	@Autowired
 	private PhieuPhatRepo phieuPhatRepo;
@@ -49,7 +66,6 @@ public class QlthuvienApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		System.out.println("___________________________________________________________________");
-		System.out.println("___________________________________________________________________");
 
 		List<ChucVuEntity> chucVuEntities = chucVuRepo.findAll();
 		chucVuEntities.forEach(System.out::println);
@@ -71,6 +87,21 @@ public class QlthuvienApplication implements CommandLineRunner {
 		System.out.println("______________________________SÁCH_________________________________");
 		System.out.println("___________________________________________________________________");
 
+		System.out.println("___________________________________________________________________");
+		List<CTPhieuMuonEntity> ctPhieuMuonEntities = ctPhieuMuonRepo.findAll();
+		ctPhieuMuonEntities.forEach(System.out::println);
+
+		System.out.println("___________________________________________________________________");
+		List<NhanVienEntity> nhanVienEntities = nhanVienRepo.findAll();
+		nhanVienEntities.forEach(System.out::println);
+
+		System.out.println("___________________________________________________________________");
+		List<NhaXuatBanEntity> nhaXuatBanEntities = nhaXuatBanRepo.findAll();
+		nhaXuatBanEntities.forEach(System.out::println);
+
+		System.out.println("___________________________________________________________________");
+		List<PhieuMuonEntity> phieuMuonEntities = phieuMuonRepo.findAll();
+		phieuMuonEntities.forEach(System.out::println);
 	}
 
 }
