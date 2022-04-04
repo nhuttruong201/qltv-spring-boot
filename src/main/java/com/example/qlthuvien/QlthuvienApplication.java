@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class QlthuvienApplication implements CommandLineRunner {
-
 	public static final String PURPLE = "\033[0;35m"; // PURPLE
 
 	@Autowired
