@@ -8,6 +8,6 @@ public class QlthuvienApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(QlthuvienApplication.class, args);
-		System.out.println("Hello");
+		System.out.println("\n>>> Server is running on port 5000");
 	}
 }
