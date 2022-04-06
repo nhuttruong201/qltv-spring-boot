@@ -6,20 +6,23 @@ public class ThemSachDTO {
     private int soluong;
     private int namxuatban;
     private int matheloai;
+    private int matacgia;
     private int manxb;
 
     @Override
     public String toString() {
-        return "ThemSachDTO [manxb=" + manxb + ", masach=" + masach + ", matheloai=" + matheloai + ", namxuatban="
-                + namxuatban + ", soluong=" + soluong + ", tensach=" + tensach + "]";
+        return "ThemSachDTO [manxb=" + manxb + ", masach=" + masach + ", matacgia=" + matacgia + ", matheloai="
+                + matheloai + ", namxuatban=" + namxuatban + ", soluong=" + soluong + ", tensach=" + tensach + "]";
     }
 
-    public ThemSachDTO(int masach, String tensach, int soluong, int namxuatban, int matheloai, int manxb) {
+    public ThemSachDTO(int masach, String tensach, int soluong, int namxuatban, int matheloai, int matacgia,
+            int manxb) {
         this.masach = masach;
         this.tensach = tensach;
         this.soluong = soluong;
         this.namxuatban = namxuatban;
         this.matheloai = matheloai;
+        this.matacgia = matacgia;
         this.manxb = manxb;
     }
 
@@ -61,6 +64,14 @@ public class ThemSachDTO {
 
     public void setMatheloai(int matheloai) {
         this.matheloai = matheloai;
+    }
+
+    public int getMatacgia() {
+        return matacgia;
+    }
+
+    public void setMatacgia(int matacgia) {
+        this.matacgia = matacgia;
     }
 
     public int getManxb() {

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TacGiaRepo extends JpaRepository<TacGiaEntity, Integer> {
-
+    TacGiaEntity findById(int id);
 }

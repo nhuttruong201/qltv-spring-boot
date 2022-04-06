@@ -26,13 +26,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
     @Autowired
     private SachRepo sachRepo;
-
     @Autowired
     private TacGiaRepo tacGiaRepo;
-
     @Autowired
     private TheloaiRepo theloaiRepo;
-
     @Autowired
     private NhaXuatBanRepo nhaXuatBanRepo;
 
@@ -58,14 +55,17 @@ public class BookController {
         SachEntity newBook = new SachEntity();
 
         newBook.setTensach(themSachDTO.getTensach());
+        newBook.setTacGiaEntity(tacGiaRepo.findById(themSachDTO.getMatacgia()));
         newBook.setTheLoaiEntity(theloaiRepo.findById(themSachDTO.getMatheloai()));
-        newBook.setManxb(themSachDTO.getManxb());
+        newBook.setNhaXuatBanEntity(nhaXuatBanRepo.findById(themSachDTO.getManxb()));
         newBook.setNamxuatban(themSachDTO.getNamxuatban());
         newBook.setSoluong(themSachDTO.getSoluong());
 
         System.out.println("new book: " + newBook.toString());
 
-        sachRepo.save(newBook);
+        // * lưu sách mới
+        newBook = sachRepo.save(newBook);
+        System.out.println(">>> check bookSave: " + newBook);
 
         return ResponseEntity.ok(SachService.getAllBook(sachRepo));
     }

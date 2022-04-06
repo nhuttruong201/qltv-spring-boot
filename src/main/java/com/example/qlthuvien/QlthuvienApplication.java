@@ -8,8 +8,6 @@ import com.example.qlthuvien.entity.ChucVuEntity;
 
 import com.example.qlthuvien.entity.TacGiaEntity;
 
-import com.example.qlthuvien.entity.TacGiaSachEntity;
-
 import com.example.qlthuvien.entity.TheDocGiaEntity;
 
 import com.example.qlthuvien.entity.TheLoaiEntity;
@@ -17,8 +15,6 @@ import com.example.qlthuvien.entity.TheLoaiEntity;
 import com.example.qlthuvien.repository.ChucVuRepo;
 
 import com.example.qlthuvien.repository.TacGiaRepo;
-
-import com.example.qlthuvien.repository.TacGiaSachRepo;
 
 import com.example.qlthuvien.repository.TheDocGiaRepo;
 
@@ -79,10 +75,6 @@ public class QlthuvienApplication implements CommandLineRunner {
 	@Autowired
 
 	private TacGiaRepo tacGiaRepo;
-
-	@Autowired
-
-	private TacGiaSachRepo tacGiaSachRepo;
 
 	@Autowired
 
@@ -203,21 +195,9 @@ public class QlthuvienApplication implements CommandLineRunner {
 
 		System.out.println("___________________________________________________________________");
 
-		System.out.println("___________________________________________________________________");
-
-		System.out.println("___________________________________________________________________");
-
 		List<TacGiaEntity> tacGiaEntities = tacGiaRepo.findAll();
 
 		tacGiaEntities.forEach(System.out::println);
-
-		System.out.println("___________________________________________________________________");
-
-		System.out.println("___________________________________________________________________");
-
-		List<TacGiaSachEntity> tacGiaSachEntities = tacGiaSachRepo.findAll();
-
-		tacGiaSachEntities.forEach(System.out::println);
 
 		System.out.println("___________________________________________________________________");
 

@@ -14,13 +14,7 @@ public class TheLoaiEntity implements Serializable {
     private String tentheloai;
 
     @OneToMany(mappedBy = "theLoaiEntity", cascade = CascadeType.ALL)
-    List<SachEntity> sachEntities;
-
-    @Override
-    public String toString() {
-        return "theloai [matheloai=" + matheloai + ", tentheloai=" + tentheloai + "]";
-
-    }
+    private List<SachEntity> sachEntities;
 
     public int getMatheloai() {
         return matheloai;
@@ -44,6 +38,11 @@ public class TheLoaiEntity implements Serializable {
 
     public void setSachEntities(List<SachEntity> sachEntities) {
         this.sachEntities = sachEntities;
+    }
+
+    @Override
+    public String toString() {
+        return "TheLoaiEntity [matheloai=" + matheloai + ", tentheloai=" + tentheloai + "]";
     }
 
 }

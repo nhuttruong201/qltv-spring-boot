@@ -5,16 +5,19 @@ public class SachDTO {
     private String tensach;
     private int soluong;
     private int namxuatban;
-    private String tentheloai;
-    private int manxb;
+    private TacGiaDTO tacgia;
+    private TheLoaiDTO theloai;
+    private NhaXuatBanDTO nhaxuatban;
 
-    public SachDTO(int masach, String tensach, int soluong, int namxuatban, String tentheloai, int manxb) {
+    public SachDTO(int masach, String tensach, int soluong, int namxuatban, TacGiaDTO tacgia, TheLoaiDTO theloai,
+            NhaXuatBanDTO nhaxuatban) {
         this.masach = masach;
         this.tensach = tensach;
         this.soluong = soluong;
         this.namxuatban = namxuatban;
-        this.tentheloai = tentheloai;
-        this.manxb = manxb;
+        this.tacgia = tacgia;
+        this.theloai = theloai;
+        this.nhaxuatban = nhaxuatban;
     }
 
     public int getMasach() {
@@ -49,20 +52,28 @@ public class SachDTO {
         this.namxuatban = namxuatban;
     }
 
-    public String getTentheloai() {
-        return tentheloai;
+    public TacGiaDTO getTacgia() {
+        return tacgia;
     }
 
-    public void setTentheloai(String tentheloai) {
-        this.tentheloai = tentheloai;
+    public void setTacgia(TacGiaDTO tacgia) {
+        this.tacgia = tacgia;
     }
 
-    public int getManxb() {
-        return manxb;
+    public TheLoaiDTO getTheloai() {
+        return theloai;
     }
 
-    public void setManxb(int manxb) {
-        this.manxb = manxb;
+    public void setTheloai(TheLoaiDTO theloai) {
+        this.theloai = theloai;
+    }
+
+    public NhaXuatBanDTO getNhaxuatban() {
+        return nhaxuatban;
+    }
+
+    public void setNhaxuatban(NhaXuatBanDTO nhaxuatban) {
+        this.nhaxuatban = nhaxuatban;
     }
 
 }
