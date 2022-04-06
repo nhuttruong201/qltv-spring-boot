@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TheloaiRepo extends JpaRepository<TheLoaiEntity, Integer> {
-
+    TheLoaiEntity findById(int id);
 }

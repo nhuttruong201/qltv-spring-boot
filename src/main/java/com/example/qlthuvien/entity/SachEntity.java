@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class SachEntity implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private int masach;
     private String tensach;
@@ -28,6 +28,18 @@ public class SachEntity implements Serializable {
     @ManyToOne
     @JoinColumn(name = "matheloai")
     private TheLoaiEntity theLoaiEntity;
+
+    public SachEntity() {
+    }
+
+    public SachEntity(int masach, String tensach, int soluong, int namxuatban, int manxb, TheLoaiEntity theLoaiEntity) {
+        this.masach = masach;
+        this.tensach = tensach;
+        this.soluong = soluong;
+        this.namxuatban = namxuatban;
+        this.manxb = manxb;
+        this.theLoaiEntity = theLoaiEntity;
+    }
 
     @Override
     public String toString() {

@@ -4,6 +4,11 @@ public class NhanVienDTO {
     private String email;
     private String matkhau;
 
+    @Override
+    public String toString() {
+        return "NhanVienDTO [email=" + email + ", matkhau=" + matkhau + "]";
+    }
+
     public String getEmail() {
         return email;
     }
