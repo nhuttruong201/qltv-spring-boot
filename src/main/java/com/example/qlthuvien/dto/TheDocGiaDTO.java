@@ -1,38 +1,29 @@
-package com.example.qlthuvien.entity;
+package com.example.qlthuvien.dto;
 
 import java.util.Date;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "thedocgia")
-public class TheDocGiaEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TheDocGiaDTO {
     private int mathe;
     private boolean dabikhoa;
     private Date ngaylamthe;
     private Date ngayhethan;
     private String hoten;
     private boolean gioitinh;
-    private boolean dangmuon;
     private String sdt;
     private String diachi;
     private String cccd;
 
-    @Override
-    public String toString() {
-        return "TheDocGiaEntity [cccd=" + cccd + ", dabikhoa=" + dabikhoa + ", dangmuon=" + dangmuon + ", diachi="
-                + diachi + ", gioitinh=" + gioitinh + ", hoten=" + hoten + ", mathe=" + mathe + ", ngayhethan="
-                + ngayhethan + ", ngaylamthe=" + ngaylamthe + ", sdt=" + sdt + "]";
-    }
-
-    public boolean isDangmuon() {
-        return dangmuon;
-    }
-
-    public void setDangmuon(boolean dangmuon) {
-        this.dangmuon = dangmuon;
+    public TheDocGiaDTO(int mathe, boolean dabikhoa, Date ngaylamthe, Date ngayhethan, String hoten, boolean gioitinh,
+            String sdt, String diachi, String cccd) {
+        this.mathe = mathe;
+        this.dabikhoa = dabikhoa;
+        this.ngaylamthe = ngaylamthe;
+        this.ngayhethan = ngayhethan;
+        this.hoten = hoten;
+        this.gioitinh = gioitinh;
+        this.sdt = sdt;
+        this.diachi = diachi;
+        this.cccd = cccd;
     }
 
     public int getMathe() {
