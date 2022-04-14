@@ -70,4 +70,24 @@ public class BookController {
         return ResponseEntity.ok(SachService.getAllBook(sachRepo));
     }
 
+    @PostMapping("/edit-book")
+    public ResponseEntity<?> editBook(@RequestHeader(value = "username", defaultValue = "null") String username,
+            @RequestBody ThemSachDTO themSachDTO) {
+
+        System.out.println(themSachDTO.toString());
+
+        SachEntity editBook = new SachEntity();
+        editBook.setMasach(themSachDTO.getMasach());
+        editBook.setTensach(themSachDTO.getTensach());
+        editBook.setTacGiaEntity(tacGiaRepo.findById(themSachDTO.getMatacgia()));
+        editBook.setTheLoaiEntity(theloaiRepo.findById(themSachDTO.getMatheloai()));
+        editBook.setNhaXuatBanEntity(nhaXuatBanRepo.findById(themSachDTO.getManxb()));
+        editBook.setNamxuatban(themSachDTO.getNamxuatban());
+        editBook.setSoluong(themSachDTO.getSoluong());
+
+        sachRepo.save(editBook);
+
+        return ResponseEntity.ok(SachService.getAllBook(sachRepo));
+    }
+
 }

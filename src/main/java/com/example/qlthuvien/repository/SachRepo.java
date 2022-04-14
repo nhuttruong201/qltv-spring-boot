@@ -12,5 +12,6 @@ import org.springframework.stereotype.Repository;
 public interface SachRepo extends JpaRepository<SachEntity, Integer> {
     // @Query("SELECT * FROM SachEntity INNER JOIN TheLoaiEntity ON
     // SachEntity.matheloai == theLoaiEntity.matheloai")
+    SachEntity findById(int id);
 
 }

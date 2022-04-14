@@ -15,16 +15,24 @@ public class TheDocGiaEntity {
     private Date ngayhethan;
     private String hoten;
     private boolean gioitinh;
+    private boolean dangmuon;
     private String sdt;
     private String diachi;
     private String cccd;
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return "thedocgia[mathe=" + mathe + ", dabikhoa =" + dabikhoa + ", ngaylamthe =" + ngaylamthe
-                + " , ngayhethan =" + ngayhethan + ", hoten =" + hoten + ", gioitinh =" + gioitinh + " , sdt =" + sdt
-                + ", diachi =" + diachi + ", cccd =" + cccd + "]";
+        return "TheDocGiaEntity [cccd=" + cccd + ", dabikhoa=" + dabikhoa + ", dangmuon=" + dangmuon + ", diachi="
+                + diachi + ", gioitinh=" + gioitinh + ", hoten=" + hoten + ", mathe=" + mathe + ", ngayhethan="
+                + ngayhethan + ", ngaylamthe=" + ngaylamthe + ", sdt=" + sdt + "]";
+    }
+
+    public boolean isDangmuon() {
+        return dangmuon;
+    }
+
+    public void setDangmuon(boolean dangmuon) {
+        this.dangmuon = dangmuon;
     }
 
     public int getMathe() {

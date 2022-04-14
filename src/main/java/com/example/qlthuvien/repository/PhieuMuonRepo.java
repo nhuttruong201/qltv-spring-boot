@@ -7,5 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PhieuMuonRepo extends JpaRepository<PhieuMuonEntity, Integer> {
+    PhieuMuonEntity findByMatheAndDathanhtoan(int mathe, boolean dathanhtoan);
 
+    PhieuMuonEntity findById(int id);
 }
