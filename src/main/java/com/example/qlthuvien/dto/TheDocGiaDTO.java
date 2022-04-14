@@ -1,14 +1,8 @@
-package com.example.qlthuvien.entity;
+package com.example.qlthuvien.dto;
 
 import java.util.Date;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "thedocgia")
-public class TheDocGiaEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TheDocGiaDTO {
     private int mathe;
     private boolean dabikhoa;
     private Date ngaylamthe;
@@ -19,12 +13,17 @@ public class TheDocGiaEntity {
     private String diachi;
     private String cccd;
 
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-        return "thedocgia[mathe=" + mathe + ", dabikhoa =" + dabikhoa + ", ngaylamthe =" + ngaylamthe
-                + " , ngayhethan =" + ngayhethan + ", hoten =" + hoten + ", gioitinh =" + gioitinh + " , sdt =" + sdt
-                + ", diachi =" + diachi + ", cccd =" + cccd + "]";
+    public TheDocGiaDTO(int mathe, boolean dabikhoa, Date ngaylamthe, Date ngayhethan, String hoten, boolean gioitinh,
+            String sdt, String diachi, String cccd) {
+        this.mathe = mathe;
+        this.dabikhoa = dabikhoa;
+        this.ngaylamthe = ngaylamthe;
+        this.ngayhethan = ngayhethan;
+        this.hoten = hoten;
+        this.gioitinh = gioitinh;
+        this.sdt = sdt;
+        this.diachi = diachi;
+        this.cccd = cccd;
     }
 
     public int getMathe() {

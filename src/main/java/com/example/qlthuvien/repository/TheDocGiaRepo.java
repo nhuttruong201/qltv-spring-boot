@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TheDocGiaRepo extends JpaRepository<TheDocGiaEntity, Integer> {
-
+    TheDocGiaEntity findById(int mathe);
 }
