@@ -1,12 +1,13 @@
 package com.example.qlthuvien.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "nhanvien")
-public class NhanVienEntity {
+public class NhanVienEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int manhanvien;
@@ -20,18 +21,13 @@ public class NhanVienEntity {
     private boolean dabikhoa;
     private Date ngaytao;
     private Date ngaysua;
-    private int machucvu;
 
-    @Override
-    public String toString() {
-        return "NhanVienEntity [dabikhoa=" + dabikhoa + ", diachi=" + diachi + ", email=" + email + ", gioitinh="
-                + gioitinh + ", hoten=" + hoten + ", machucvu=" + machucvu + ", manhanvien=" + manhanvien + ", matkhau="
-                + matkhau + ", namsinh=" + namsinh + ", ngaysua=" + ngaysua + ", ngaytao=" + ngaytao + ", sdt=" + sdt
-                + "]";
-    }
+    @ManyToOne
+    @JoinColumn(name = "machucvu")
+    private ChucVuEntity chucVuEntity;
 
     public int getManhanvien() {
-        return manhanvien;
+        return this.manhanvien;
     }
 
     public void setManhanvien(int manhanvien) {
@@ -39,7 +35,7 @@ public class NhanVienEntity {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -47,7 +43,7 @@ public class NhanVienEntity {
     }
 
     public String getMatkhau() {
-        return matkhau;
+        return this.matkhau;
     }
 
     public void setMatkhau(String matkhau) {
@@ -55,7 +51,7 @@ public class NhanVienEntity {
     }
 
     public String getHoten() {
-        return hoten;
+        return this.hoten;
     }
 
     public void setHoten(String hoten) {
@@ -63,7 +59,11 @@ public class NhanVienEntity {
     }
 
     public boolean isGioitinh() {
-        return gioitinh;
+        return this.gioitinh;
+    }
+
+    public boolean getGioitinh() {
+        return this.gioitinh;
     }
 
     public void setGioitinh(boolean gioitinh) {
@@ -71,7 +71,7 @@ public class NhanVienEntity {
     }
 
     public int getNamsinh() {
-        return namsinh;
+        return this.namsinh;
     }
 
     public void setNamsinh(int namsinh) {
@@ -79,7 +79,7 @@ public class NhanVienEntity {
     }
 
     public String getSdt() {
-        return sdt;
+        return this.sdt;
     }
 
     public void setSdt(String sdt) {
@@ -87,7 +87,7 @@ public class NhanVienEntity {
     }
 
     public String getDiachi() {
-        return diachi;
+        return this.diachi;
     }
 
     public void setDiachi(String diachi) {
@@ -95,7 +95,11 @@ public class NhanVienEntity {
     }
 
     public boolean isDabikhoa() {
-        return dabikhoa;
+        return this.dabikhoa;
+    }
+
+    public boolean getDabikhoa() {
+        return this.dabikhoa;
     }
 
     public void setDabikhoa(boolean dabikhoa) {
@@ -103,7 +107,7 @@ public class NhanVienEntity {
     }
 
     public Date getNgaytao() {
-        return ngaytao;
+        return this.ngaytao;
     }
 
     public void setNgaytao(Date ngaytao) {
@@ -111,19 +115,37 @@ public class NhanVienEntity {
     }
 
     public Date getNgaysua() {
-        return ngaysua;
+        return this.ngaysua;
     }
 
     public void setNgaysua(Date ngaysua) {
         this.ngaysua = ngaysua;
     }
 
-    public int getMachucvu() {
-        return machucvu;
+    public ChucVuEntity getChucVuEntity() {
+        return this.chucVuEntity;
     }
 
-    public void setMachucvu(int machucvu) {
-        this.machucvu = machucvu;
+    public void setChucVuEntity(ChucVuEntity chucVuEntity) {
+        this.chucVuEntity = chucVuEntity;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                " manhanvien='" + getManhanvien() + "'" +
+                ", email='" + getEmail() + "'" +
+                ", matkhau='" + getMatkhau() + "'" +
+                ", hoten='" + getHoten() + "'" +
+                ", gioitinh='" + isGioitinh() + "'" +
+                ", namsinh='" + getNamsinh() + "'" +
+                ", sdt='" + getSdt() + "'" +
+                ", diachi='" + getDiachi() + "'" +
+                ", dabikhoa='" + isDabikhoa() + "'" +
+                ", ngaytao='" + getNgaytao() + "'" +
+                ", ngaysua='" + getNgaysua() + "'" +
+                ", chucVuEntity='" + getChucVuEntity() + "'" +
+                "}";
     }
 
 }

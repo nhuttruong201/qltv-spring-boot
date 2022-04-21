@@ -2,7 +2,7 @@ package com.example.qlthuvien.dto;
 
 import java.util.Date;
 
-public class NhanVienDTO {
+public class ThemNhanVienDTO {
     private int manhanvien;
     private String email;
     private String matkhau;
@@ -14,10 +14,10 @@ public class NhanVienDTO {
     private boolean dabikhoa;
     private Date ngaytao;
     private Date ngaysua;
-    private ChucVuDTO chucvu;
+    private int machucvu;
 
-    public NhanVienDTO(int manhanvien, String email, String matkhau, String hoten, boolean gioitinh, int namsinh,
-            String sdt, String diachi, boolean dabikhoa, Date ngaytao, Date ngaysua, ChucVuDTO chucvu) {
+    public ThemNhanVienDTO(int manhanvien, String email, String matkhau, String hoten, boolean gioitinh, int namsinh,
+            String sdt, String diachi, boolean dabikhoa, Date ngaytao, Date ngaysua, int machucvu) {
         this.manhanvien = manhanvien;
         this.email = email;
         this.matkhau = matkhau;
@@ -29,7 +29,7 @@ public class NhanVienDTO {
         this.dabikhoa = dabikhoa;
         this.ngaytao = ngaytao;
         this.ngaysua = ngaysua;
-        this.chucvu = chucvu;
+        this.machucvu = machucvu;
     }
 
     public int getManhanvien() {
@@ -128,16 +128,30 @@ public class NhanVienDTO {
         this.ngaysua = ngaysua;
     }
 
-    public ChucVuDTO getChucvu() {
-        return this.chucvu;
+    public int getMachucvu() {
+        return this.machucvu;
     }
 
-    public void setChucvu(ChucVuDTO chucvu) {
-        this.chucvu = chucvu;
+    public void setMachucvu(int machucvu) {
+        this.machucvu = machucvu;
     }
 
-    // @Override
-    // public String toString() {
-    // return "NhanVienDTO [email=" + email + ", matkhau=" + matkhau + "]";
+    @Override
+    public String toString() {
+        return "{" +
+                " manhanvien='" + getManhanvien() + "'" +
+                ", email='" + getEmail() + "'" +
+                ", matkhau='" + getMatkhau() + "'" +
+                ", hoten='" + getHoten() + "'" +
+                ", gioitinh='" + isGioitinh() + "'" +
+                ", namsinh='" + getNamsinh() + "'" +
+                ", sdt='" + getSdt() + "'" +
+                ", diachi='" + getDiachi() + "'" +
+                ", dabikhoa='" + isDabikhoa() + "'" +
+                ", ngaytao='" + getNgaytao() + "'" +
+                ", ngaysua='" + getNgaysua() + "'" +
+                ", machucvu='" + getMachucvu() + "'" +
+                "}";
+    }
 
 }

@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ChucVuRepo extends JpaRepository<ChucVuEntity, Integer> {
-
+    ChucVuEntity findById(int id);
 }
