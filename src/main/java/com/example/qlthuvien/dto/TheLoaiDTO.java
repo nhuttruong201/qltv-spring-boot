@@ -9,6 +9,11 @@ public class TheLoaiDTO {
         this.tentheloai = tentheloai;
     }
 
+    @Override
+    public String toString() {
+        return "TheLoaiDTO [matheloai=" + matheloai + ", tentheloai=" + tentheloai + "]";
+    }
+
     public int getMatheloai() {
         return matheloai;
     }

@@ -9,6 +9,11 @@ public class TacGiaDTO {
         this.tentacgia = tentacgia;
     }
 
+    @Override
+    public String toString() {
+        return "TacGiaDTO [matacgia=" + matacgia + ", tentacgia=" + tentacgia + "]";
+    }
+
     public int getMatacgia() {
         return matacgia;
     }

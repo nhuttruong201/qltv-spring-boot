@@ -9,6 +9,11 @@ public class NhaXuatBanDTO {
         this.tennxb = tennxb;
     }
 
+    @Override
+    public String toString() {
+        return "NhaXuatBanDTO [manxb=" + manxb + ", tennxb=" + tennxb + "]";
+    }
+
     public int getManxb() {
         return manxb;
     }
