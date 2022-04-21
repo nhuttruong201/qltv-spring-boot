@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface NhanVienRepo extends JpaRepository<NhanVienEntity, Integer> {
     NhanVienEntity findByEmail(String email);
+
 }
